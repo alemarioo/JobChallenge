@@ -31,3 +31,5 @@ async function ObtenerLugar(nombre) {
     const LugarEncontrado = await LugarModel.findOne({nombre: nombre})
     return LugarEncontrado;
 }
+
+module.exports = {RegistarNuevoLugar, ObtenerLugar};
