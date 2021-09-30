@@ -8,9 +8,9 @@ const LugarModel = require('../models/info')
  * @param {Number} latitud Latitud del lugar
  */
 async function RegistarNuevoLugar(nombre, longitud, latitud) {
-
+    guarda_nombre = nombre.toLowerCase()
     const LugarMongo = new LugarModel({
-        nombre: nombre,
+        nombre: guarda_nombre,
         longitud: longitud,
         latitud: latitud
     })
@@ -25,7 +25,7 @@ async function RegistarNuevoLugar(nombre, longitud, latitud) {
 /**
  * Funcion que obtiene la informacion del lugar en la base de datos
  * @param {String} nombre 
- * @returns Retorna el json del lugar encontrado
+ * @returns {JSON} Retorna el json del lugar encontrado
  */
 async function ObtenerLugar(nombre) {
     const LugarEncontrado = await LugarModel.findOne({nombre: nombre})
