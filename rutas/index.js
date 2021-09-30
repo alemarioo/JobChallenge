@@ -4,6 +4,7 @@ const {Router} = require('express');
 const express = require('express');
 const router = Router();
 
+
 router.post('/', express.json({type: '*/*'}), (req,res)=> {
 
     //If que sirve para verificar si esta mandando un solo dato o esta enviando un array de datos
@@ -20,10 +21,16 @@ router.post('/', express.json({type: '*/*'}), (req,res)=> {
 
 router.get('/distance', async (req,res)=> {
     const placeOne = await ObtenerLugar(req.query.placeOne.toLowerCase())
-    console.log(placeOne)
+    
     const placeTwo = await ObtenerLugar(req.query.placeTwo.toLowerCase())
-    resaaa = distancia(placeOne, placeTwo)
-    res.send({"distancia": resaaa, "unidad": "km"})
+    if (placeOne != null && placeTwo != null) {
+        dis = distancia(placeOne, placeTwo)
+        res.send({"distancia": dis, "unidad": "km"})
+    }else{
+        res.send({"mensaje": "upss... parece ser que uno no ha sido registrado"} )
+    }
+    
+    
 })
 
 module.exports = router;

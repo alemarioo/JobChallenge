@@ -29,6 +29,7 @@ async function RegistarNuevoLugar(nombre, longitud, latitud) {
  */
 async function ObtenerLugar(nombre) {
     const LugarEncontrado = await LugarModel.findOne({nombre: nombre})
+    
     return LugarEncontrado;
 }
 
