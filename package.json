@@ -1,0 +1,24 @@
+{
+  "name": "JobChallenge",
+  "version": "1.0.0",
+  "description": "JobChallenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alemarioo/JobChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alemarioo/JobChallenge/issues"
+  },
+  "homepage": "https://github.com/alemarioo/JobChallenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
